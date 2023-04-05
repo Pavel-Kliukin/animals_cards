@@ -1,0 +1,7 @@
+.animals {
+  background-color: rgb(64, 118, 237);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

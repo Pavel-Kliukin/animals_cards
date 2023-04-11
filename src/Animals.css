@@ -1,5 +1,20 @@
 .animals {
-  background-color: rgb(64, 118, 237);
+  background-image: url("assets/back.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.animals .animalsHeader {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.animalsOutput {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

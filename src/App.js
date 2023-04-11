@@ -1,12 +1,17 @@
 import React, { Component } from "react";
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import './App.css';
 import { animals } from './animalsList.js'
+import { birds } from './animalsList.js'
 import Header from './Header'
 import Animals from './Animals'
+import Birds from './Birds'
+import Home from "./Home";
 
 
 class App extends Component {
   state = {
+    birds: birds,
     animals: animals,
     title: 'Living world',
     searchInput: ''
@@ -47,15 +52,36 @@ class App extends Component {
 
   render () {
     return (
-      <div>
-        <Header title={this.state.title} />
-        <Animals
-          data={this.state.animals}
-          removeHandler={this.removeHandler}
-          LikesHandler={this.LikesHandler}
-          searchHandler={this.searchHandler}
-          searchInput={this.state.searchInput} />
-      </div>
+      <BrowserRouter>
+        <div>
+          <Header title={this.state.title} />
+        </div>
+        <Routes>
+          <Route path="/" element={
+            <Home
+              animalslink={
+                <NavLink to="/animals">
+                  ANIMALS
+                </NavLink>}
+              birdslink={
+                <NavLink to="/birds">
+                  BIRDS
+                </NavLink>} />} />
+          <Route path="/animals" element={
+            <Animals
+              data={this.state.animals}
+              removeHandler={this.removeHandler}
+              LikesHandler={this.LikesHandler}
+              searchHandler={this.searchHandler}
+              searchInput={this.state.searchInput} />} />
+          <Route path="/birds" element={<Animals
+            data={this.state.birds}
+            removeHandler={this.removeHandler}
+            LikesHandler={this.LikesHandler}
+            searchHandler={this.searchHandler}
+            searchInput={this.state.searchInput} />} />
+        </Routes>
+      </BrowserRouter>
     );
   }
 }

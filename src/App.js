@@ -3,10 +3,10 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import './App.css';
 import { animals } from './animalsList.js'
 import { birds } from './animalsList.js'
-import Header from './Header'
-import Animals from './Animals'
-import Birds from './Birds'
-import Home from "./Home";
+import Header from './components/Header'
+import Animals from './pages/Animals'
+import Birds from './pages/Birds'
+import Home from "./pages/Home";
 
 
 class App extends Component {

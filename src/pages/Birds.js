@@ -1,5 +1,5 @@
-import Card from './Card.js'
-import Search from './Search.js'
+import Card from '../UI/Card.js'
+import Search from '../UI/Search.js'
 import './Birds.css';
 
 

@@ -1,12 +1,12 @@
-.animals {
-  background-image: url("assets/back.jpg");
+.birds {
+  background-image: url("../assets/back.jpg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-.animals .animalsHeader {
+.birds .birdsHeader {
   color: white;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-.animalsOutput {
+.birdsOutput {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

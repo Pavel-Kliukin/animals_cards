@@ -19,11 +19,11 @@ const Birds = (props) => {
           key={item.name}
           name={item.name}
           likes={item.likes}
-          removeCard={() => props.removeHandler(item.name)} //we use arrow function to pass item.name up to App.js (we binding the data)
+          removeCard={() => props.removeHandlerB(item.name)} //we use arrow function to pass item.name up to App.js (we binding the data)
           // if don't need to pass the name of clciked card we can use just this:
           // removeCard={() => props.removeHandler(item.name)}
-          addLikes={() => props.LikesHandler(item.name, '+')}
-          removeLikes={() => props.LikesHandler(item.name, '-')} />)
+          addLikes={() => props.LikesHandlerB(item.name, '+')}
+          removeLikes={() => props.LikesHandlerB(item.name, '-')} />)
         }
       </div>
     </div >

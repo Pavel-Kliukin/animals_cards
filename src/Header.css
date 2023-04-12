@@ -2,12 +2,24 @@
   background-color: #333;
   height: 10vh;
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
   color: white;
 }
 
 .header h1 {
   margin-left: 1rem;
+}
+
+.header li {
+  display: inline-block;
+  margin: 1vw;
+}
+
+.header nav {
+  margin-left: 25rem;
+}
+
+.header a {
+  color: white;
+  font-weight: bold;
 }

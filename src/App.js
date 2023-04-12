@@ -17,6 +17,8 @@ class App extends Component {
     searchInput: ''
   }
 
+  // FUNCTIONS FOR ANIMALS
+
   removeHandler = (name) => {
     const updatedArray = this.state.animals.filter(animal => animal.name !== name)
     this.setState({
@@ -44,6 +46,36 @@ class App extends Component {
     })
   }
 
+  // FUNCTIONS FOR BIRDS
+
+  removeHandlerB = (name) => {
+    const updatedArray = this.state.birds.filter(animal => animal.name !== name)
+    this.setState({
+      birds: updatedArray
+    })
+  }
+
+  LikesHandlerB = (name, action) => {
+    // here we use function inside the setState
+    this.setState((prevState) => {  // prevState is a current state, prevState is not a reserved word
+      const updatedArray = prevState.birds.map((animal) => {
+        if (animal.name === name) {
+          if (action === '+') {
+            return { ...animal, likes: animal.likes + 1 } // by "..." we spread (open or, you may say, getting access to) animal object to change the data (likes)
+          } else {
+            return { ...animal, likes: animal.likes - 1 }
+          }
+        } else {
+          return animal
+        }
+      })
+      return {
+        birds: updatedArray
+      }
+    })
+  }
+
+  // SEARCH FOR ANIMALS AND BIRDS
   searchHandler = (e) => { // e - event
     this.setState({
       searchInput: e.target.value
@@ -54,7 +86,14 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Header title={this.state.title} />
+          <Header
+            title={this.state.title}
+            home={<NavLink to="/">Home</NavLink>}
+            animals={<NavLink to="/animals">Animals</NavLink>}
+            aCount={this.state.animals.length}
+            birds={<NavLink to="/birds">Birds</NavLink>}
+            bCount={this.state.birds.length}
+          />
         </div>
         <Routes>
           <Route path="/" element={
@@ -74,10 +113,10 @@ class App extends Component {
               LikesHandler={this.LikesHandler}
               searchHandler={this.searchHandler}
               searchInput={this.state.searchInput} />} />
-          <Route path="/birds" element={<Animals
+          <Route path="/birds" element={<Birds
             data={this.state.birds}
-            removeHandler={this.removeHandler}
-            LikesHandler={this.LikesHandler}
+            removeHandlerB={this.removeHandlerB}
+            LikesHandlerB={this.LikesHandlerB}
             searchHandler={this.searchHandler}
             searchInput={this.state.searchInput} />} />
         </Routes>

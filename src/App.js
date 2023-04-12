@@ -22,7 +22,6 @@ class App extends Component {
   }
 
   LikesHandler = (name, action, type) => {
-    console.log(name, action, type)
     // here we use function inside the setState
     this.setState((prevState) => {  // prevState is a current state, prevState is not a reserved word
       const updatedArray = prevState[type].map((creature) => {

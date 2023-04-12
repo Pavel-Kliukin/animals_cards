@@ -1,4 +1,4 @@
-.animals {
+.subtypes {
   background-image: url("../assets/back.jpg");
   height: 100vh;
   background-position: center;
@@ -6,7 +6,7 @@
   background-attachment: fixed;
 }
 
-.animals .animalsHeader {
+.subtypes .subtypesHeader {
   color: white;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-.animalsOutput {
+.subtypesOutput {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

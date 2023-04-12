@@ -6,14 +6,12 @@ const Home = (props) => {
   return (
     <div className="mainBox">
       <div className="animalsLink">
-        <div className='aLinkHeader'>
-          {props.animalslink}
-        </div>
+        <div className='aLinkHeader'></div>
+        {props.animalslink}
       </div>
       <div className="birdsLink">
-        <div className='bLinkHeader'>
-          {props.birdslink}
-        </div>
+        <div className='bLinkHeader'></div>
+        {props.birdslink}
       </div>
     </div>
   );
